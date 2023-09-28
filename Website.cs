@@ -6,49 +6,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace NET_Homework_3_1
 {
     internal class Website
     {
-        private string _url;
-        private string _title;
-        private string _description;
+        public string SiteName { get; set; }
+        public string SiteUrl { get; set; }
+        public string SiteDescription { get; set; }
 
         public Website(string name, string url, string description)
         {
-            _title = name;
-            _url = url;
-            _description = description;
+            SiteName = name;
+            SiteUrl = url;
+            SiteDescription = description;
         }
 
-        public void InputData(string title, string url, string description)
+        public void InputData(string name, string url, string description)
         {
-            _title = title;
-            _url = url;
-            _description = description;
+            SiteName = name;
+            SiteUrl = url;
+            SiteDescription = description;
         }
 
         public void OutputData()
         {
-            Console.WriteLine($"Назва сайту: {_title}");
-            Console.WriteLine($"Шлях до сайту: {_url}");
-            Console.WriteLine($"Опис сайту: {_description}");
+            Console.WriteLine($"Назва сайту: {SiteName}");
+            Console.WriteLine($"Шлях до сайту: {SiteUrl}");
+            Console.WriteLine($"Опис сайту: {SiteDescription}");
         }
-        public string SiteName 
-        {
-            get { return _title; }
-            set { _title = value; }
-        }
-        public string SiteUrl 
-        {
-            get { return _url; }
-            set { _url = value; }
-        }
-        public string SiteDescription 
-        {
-            get { return _description; }
-            set { _description = value; }
-        }         
+                 
     }
 }
